@@ -1,6 +1,12 @@
 {
-  "name": "CodeSpace - Frontend",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "name": "Minimal Ubuntu + Docker",
+  "image": "ubuntu:24.04",
+  "features": {
+    "ghcr.io/devcontainers/features/docker-in-docker:4": {
+      "installDockerBuildx": false,
+      "installDockerComposeSwitch": false
+    }
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -9,5 +15,8 @@
       ]
     }
   },
+  "runArgs": [
+    "--privileged"
+  ],
   "remoteUser": "root"
 }
